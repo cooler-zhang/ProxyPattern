@@ -21,7 +21,7 @@ namespace ProxyPattern
 
         public static void TestCallService()
         {
-            var address = new EndpointAddress("http://localhost:53422/MathService.svc");
+            var address = new EndpointAddress(ConfigHelper.MathServiceUrl);
             var bind = new BasicHttpBinding();
             var factory = new ChannelFactory<IMathService>(bind, address);
             var channel = factory.CreateChannel();
@@ -31,7 +31,7 @@ namespace ProxyPattern
 
         public static void TestProxyCallService()
         {
-            var service = new MathService();
+            var service = new MathServiceProxy();
             var result = service.Add(1, 2);
             Console.WriteLine($"Result: {result}");
         }

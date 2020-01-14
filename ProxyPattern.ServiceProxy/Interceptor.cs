@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ProxyPattern.ServiceProxy
 {
-    public class DynamicServiceInterceptor<TInterface> : IInterceptor
+    public class Interceptor<TInterface> : IInterceptor
     {
         public void Intercept(IInvocation invocation)
         {

@@ -4,16 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1757933B-202F-4387-A84A-B572AC454716}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ProxyPattern.ServiceProxy</RootNamespace>
-    <AssemblyName>ProxyPattern.ServiceProxy</AssemblyName>
+    <ProjectGuid>{E6986138-4742-4E7B-B000-FAFA104B0E1C}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>ProxyPattern.Base</RootNamespace>
+    <AssemblyName>ProxyPattern.Base</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -32,9 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
-    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,22 +43,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConfigHelper.cs" />
-    <Compile Include="Interceptor.cs" />
-    <Compile Include="ServiceFactory.cs" />
+    <Compile Include="IMathService.cs" />
+    <Compile Include="MathService.cs" />
     <Compile Include="MathServiceProxy.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ProxyPattern.ServiceInterface\ProxyPattern.ServiceInterface.csproj">
-      <Project>{4a7b30ae-25fd-4ce7-bcb2-fc353326d9fd}</Project>
-      <Name>ProxyPattern.ServiceInterface</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Castle.Core">
-      <Version>4.4.0</Version>
-    </PackageReference>
+    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

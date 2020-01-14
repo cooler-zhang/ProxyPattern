@@ -8,18 +8,18 @@ using System.Threading.Tasks;
 
 namespace ProxyPattern.ServiceProxy
 {
-    public class MathService : IMathService
+    public class MathServiceProxy : IMathService
     {
         private IMathService _channel;
 
-        public MathService()
+        public MathServiceProxy()
         {
             Initialize();
         }
 
         public void Initialize()
         {
-            var address = new EndpointAddress("http://localhost:53422/MathService.svc");
+            var address = new EndpointAddress(ConfigHelper.MathServiceUrl);
             var bind = new BasicHttpBinding();
             var factory = new ChannelFactory<IMathService>(bind, address);
             this._channel = factory.CreateChannel();
