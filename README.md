@@ -15,7 +15,6 @@
         defines the real object that the proxy represents.
 - ### UML
   ![Proxy](https://www.dofactory.com/images/diagrams/net/proxy.gif)
-  [comment]:![Proxy](proxy.gif)
 - ### Demo
   - #### ProxyPattern.Base
 - ### Proxy Apply ###
